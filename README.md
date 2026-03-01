@@ -1,4 +1,4 @@
-# pynpm_bridge
+![Logo](https://files.catbox.moe/dyg3je.webp)
 
 Use npm packages directly from Python with JavaScript equivalent behavior.
 
