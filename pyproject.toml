@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pynpm-bridge"
+version = "1.0.0"
+description = "Use npm packages from Python via a persistent Node.js runtime bridge"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "pynpm_bridge contributors"}
+]
+dependencies = [
+    "click>=8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-timeout>=2.0",
+]
+
+[project.scripts]
+pynpm = "pynpm_bridge.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"pynpm_bridge" = ["node_worker/*.mjs"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+timeout = 120
